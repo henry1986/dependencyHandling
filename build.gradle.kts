@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 group = "org.daiv.dependency"
-version = "0.0.9"
+version = "0.0.13"
 
 repositories {
     mavenCentral()
