@@ -4,7 +4,7 @@ plugins {
     `maven-publish`
 }
 group = "org.daiv.dependency"
-version = "0.0.13"
+version = "0.0.14"
 
 repositories {
     mavenCentral()
@@ -13,14 +13,6 @@ dependencies {
     implementation(kotlin("gradle-plugin"))
     implementation(gradleApi())
     implementation(localGroovy())
-}
-gradlePlugin{
-    plugins{
-        create("DependencyHandling"){
-            id = "org.daiv.dependency"
-            implementationClass = "org.daiv.dependency.DependencyHandling"
-        }
-    }
 }
 
 artifactory {

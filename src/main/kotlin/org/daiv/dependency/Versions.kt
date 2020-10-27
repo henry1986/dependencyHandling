@@ -26,7 +26,7 @@ data class Versions(
     companion object {
         val versions1_4_0 = Versions(
             serialization = "1.0.0-RC",
-            kutil = "0.3.0",
+            kutil = "0.3.2",
             coroutines = "1.3.9",
             ktor = "1.4.0",
             jpersistence = "0.9.1",
