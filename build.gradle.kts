@@ -1,18 +1,31 @@
 plugins {
-    `kotlin-dsl`
+//    `kotlin-dsl`
+    kotlin("jvm") version "1.3.70"
     id("com.jfrog.artifactory") version "4.17.2"
     `maven-publish`
 }
+
 group = "org.daiv.dependency"
-version = "0.0.14"
+version = "0.0.21"
+
 
 repositories {
     mavenCentral()
 }
+
 dependencies {
-    implementation(kotlin("gradle-plugin"))
-    implementation(gradleApi())
-    implementation(localGroovy())
+    implementation(kotlin("stdlib"))
+//    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.70")
+//    implementation(kotlin("gradle-plugin"))
+//    implementation(kotlin("reflect", "1.4.10"))
+//    implementation(gradleApi())
+}
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+        }
+    }
 }
 
 artifactory {
@@ -24,8 +37,9 @@ artifactory {
             setProperty("password", project.findProperty("daiv_password"))
             setProperty("maven", true)
         })
+
         defaults(delegateClosureOf<groovy.lang.GroovyObject> {
-            invokeMethod("publications", publishing.publications.names.toTypedArray())
+            invokeMethod("publications", arrayOf("mavenJava"))
             setProperty("publishPom", true)
             setProperty("publishArtifacts", true)
         })
