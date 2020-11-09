@@ -1,0 +1,25 @@
+<!--
+  ~ Copyright (c) 2018. Martin Heinrich
+  ~ This source code is property of the EA GmbH.
+  -->
+
+<configuration>
+    <!-- STDOUT APPENDER -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{60} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+
+    <logger name="org.daiv.reflection.persister.Persister" level="OFF"/>
+    <logger name="org.daiv.websocket.ControlledChannelImpl" level="DEBUG"/>
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+</configuration>
