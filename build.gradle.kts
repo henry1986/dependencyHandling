@@ -15,13 +15,13 @@ version = dependencyHandlingVersion
 
 repositories {
     mavenCentral()
-    maven("https://daiv.org/artifactory/gradle-dev-local")
+    maven("https://artifactory.daiv.org/artifactory/gradle-dev-local")
 }
 
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("com.google.code.gson:gson:2.8.5")
-    implementation("org.daiv.dependency:VersionPluginConfiguration:0.0.10")
+    implementation("org.daiv.dependency:VersionPluginConfiguration:0.0.14")
 //    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.70")
 //    implementation(kotlin("gradle-plugin"))
 //    implementation(kotlin("reflect", "1.4.10"))
