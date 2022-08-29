@@ -5,19 +5,19 @@ import com.google.gson.GsonBuilder
 
 data class Versions(
     val serialization: String,
-    val kutil: String,
+    val kutil: String, // me
     val coroutines: String,
     val ktor: String,
-    val jpersistence: String,
-    val eventbus: String,
-    val appendable: String,
+    val jpersistence: String, // me
+    val eventbus: String, // me
+    val appendable: String, // me
     val gson: String,
     val kotlinx_html: String,
     val mockk: String,
     val quartz: String,
     val apacheMail: String,
-    val physicUnits: String,
-    val coroutinesLib: String,
+    val physicUnits: String, // me
+    val coroutinesLib: String, // me
     val sqlite_jdbc: String,
     val postgres_jdbc: String
 ) : Incrementable<Versions> {
@@ -59,6 +59,8 @@ interface StandardBuilder {
     fun ktor(module: String) = "io.ktor:ktor-$module:${versions.ktor}"
     fun kotlinx(module: String, version: String) = "org.jetbrains.kotlinx:kotlinx-$module:$version"
     fun testValue() = "testValue"
+    fun serialization_json() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
+    fun serialization_json2() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
 }
 
 class DefaultDependencyBuilder(override val versions: Versions = Versions.current()) : StandardBuilder,

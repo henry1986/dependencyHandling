@@ -7,7 +7,8 @@ plugins {
     `maven-publish`
 }
 
-val dependencyHandlingVersion = loadProperties(file("version.properties").absolutePath).getProperty("dependencyHandlingVersion")
+val dependencyHandlingVersion =
+    loadProperties(file("version.properties").absolutePath).getProperty("dependencyHandlingVersion")
 
 group = "org.daiv.dependency"
 version = dependencyHandlingVersion
@@ -21,7 +22,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     implementation("com.google.code.gson:gson:2.8.5")
-    implementation("org.daiv.dependency:VersionPluginConfiguration:0.0.14")
+    implementation("org.daiv.dependency:VersionPluginConfiguration:0.0.15")
 //    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.70")
 //    implementation(kotlin("gradle-plugin"))
 //    implementation(kotlin("reflect", "1.4.10"))
@@ -46,11 +47,15 @@ artifactory {
         })
 
         defaults(delegateClosureOf<groovy.lang.GroovyObject> {
-            invokeMethod("publications",  arrayOf("mavenJava"))
+            invokeMethod("publications", arrayOf("mavenJava"))
 //            invokeMethod("publications",  publishing.publications.names.toTypedArray())
             setProperty("publishPom", true)
             setProperty("publishArtifacts", true)
         })
     })
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+    kotlinOptions.jvmTarget = "1.8"
 }
 
