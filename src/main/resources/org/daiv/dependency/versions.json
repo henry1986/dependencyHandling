@@ -3,7 +3,7 @@
   "kutil": "0.4.7",
   "coroutines": "1.6.0",
   "ktor": "1.6.5",
-  "jpersistence": "0.10.2",
+  "jpersistence": "0.10.8",
   "eventbus": "0.6.3",
   "appendable": "0.1.2",
   "gson": "2.8.5",
