@@ -19,6 +19,7 @@ data class Versions(
     val physicUnits: String, // me
     val coroutinesLib: String, // me
     val sqlite_jdbc: String,
+    val logback: String,
     val postgres_jdbc: String
 ) : Incrementable<Versions> {
     companion object {
@@ -61,6 +62,9 @@ interface StandardBuilder {
     fun testValue() = "testValue"
     fun serialization_json() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
     fun serialization_json2() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
+    fun logback(module: String) = "ch.qos.logback:logback-${module}:${versions.logback}"
+    fun logbackClassic()= logback("classic")
+    fun logbackCore()= logback("core")
 }
 
 class DefaultDependencyBuilder(override val versions: Versions = Versions.current()) : StandardBuilder,
