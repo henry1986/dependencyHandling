@@ -20,6 +20,7 @@ data class Versions(
     val coroutinesLib: String, // me
     val sqlite_jdbc: String,
     val logback: String,
+    val koin: String,
     val postgres_jdbc: String
 ) : Incrementable<Versions> {
     companion object {
@@ -65,6 +66,9 @@ interface StandardBuilder {
     fun logback(module: String) = "ch.qos.logback:logback-${module}:${versions.logback}"
     fun logbackClassic()= logback("classic")
     fun logbackCore()= logback("core")
+
+    fun koin(name:String) = "io.insert-koin:koin-$name:${versions.koin}"
+    fun koinCore() = koin("core")
 }
 
 class DefaultDependencyBuilder(override val versions: Versions = Versions.current()) : StandardBuilder,

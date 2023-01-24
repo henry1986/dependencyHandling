@@ -3,7 +3,7 @@
   "kutil": "0.4.10",
   "coroutines": "1.6.0",
   "ktor": "1.6.5",
-  "jpersistence": "0.10.10",
+  "jpersistence": "0.10.11",
   "eventbus": "0.6.4",
   "appendable": "0.1.3",
   "gson": "2.10",
@@ -15,5 +15,6 @@
   "coroutinesLib": "0.1.4",
   "sqlite_jdbc": "3.27.2.1",
   "logback": "1.4.5",
+  "koin": "3.1.6",
   "postgres_jdbc": "42.5.1"
 }
