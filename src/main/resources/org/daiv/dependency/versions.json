@@ -12,7 +12,7 @@
   "quartz": "2.3.2",
   "apacheMail": "1.5",
   "physicUnits": "1.1.8",
-  "coroutinesLib": "0.1.4",
+  "coroutinesLib": "0.1.5",
   "sqlite_jdbc": "3.27.2.1",
   "logback": "1.4.5",
   "koin": "3.1.6",
