@@ -18,6 +18,7 @@ data class Versions(
     val apacheMail: String,
     val physicUnits: String, // me
     val coroutinesLib: String, // me
+    val timebasedDatacompress: String, // me
     val sqlite_jdbc: String,
     val logback: String,
     val koin: String,
@@ -54,6 +55,7 @@ interface StandardBuilder {
     fun apacheMail() = "org.apache.commons:commons-email:${versions.apacheMail}"
 
     fun coroutines_lib() = "org.daiv.coroutines:coroutines-lib:${versions.coroutinesLib}"
+    fun timebasedDatacompressed() = "org.daiv.timebased.datacompress:timebased-datacompress:${versions.timebasedDatacompress}"
 
     fun jpersistence() = "org.daiv.jpersistence:jpersistence:${versions.jpersistence}"
     fun coroutines() = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
