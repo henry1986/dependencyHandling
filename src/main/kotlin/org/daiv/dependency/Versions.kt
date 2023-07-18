@@ -18,7 +18,10 @@ data class Versions(
     val apacheMail: String,
     val physicUnits: String, // me
     val coroutinesLib: String, // me
+    val timebasedDatacompress: String, // me
     val sqlite_jdbc: String,
+    val logback: String,
+    val koin: String,
     val postgres_jdbc: String
 ) : Incrementable<Versions> {
     companion object {
@@ -52,6 +55,7 @@ interface StandardBuilder {
     fun apacheMail() = "org.apache.commons:commons-email:${versions.apacheMail}"
 
     fun coroutines_lib() = "org.daiv.coroutines:coroutines-lib:${versions.coroutinesLib}"
+    fun timebasedDatacompressed() = "org.daiv.timebased.datacompress:timebased-datacompress:${versions.timebasedDatacompress}"
 
     fun jpersistence() = "org.daiv.jpersistence:jpersistence:${versions.jpersistence}"
     fun coroutines() = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutines}"
@@ -61,6 +65,12 @@ interface StandardBuilder {
     fun testValue() = "testValue"
     fun serialization_json() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
     fun serialization_json2() = "org.jetbrains.kotlinx:kotlinx-serialization-json:${versions.serialization}"
+    fun logback(module: String) = "ch.qos.logback:logback-${module}:${versions.logback}"
+    fun logbackClassic()= logback("classic")
+    fun logbackCore()= logback("core")
+
+    fun koin(name:String) = "io.insert-koin:koin-$name:${versions.koin}"
+    fun koinCore() = koin("core")
 }
 
 class DefaultDependencyBuilder(override val versions: Versions = Versions.current()) : StandardBuilder,
