@@ -17,5 +17,6 @@
   "sqlite_jdbc": "3.27.2.1",
   "logback": "1.4.5",
   "koin": "3.1.6",
-  "postgres_jdbc": "42.5.1"
+  "postgres_jdbc": "42.5.1",
+  "kotlinxDataTime": "0.4.1"
 }
